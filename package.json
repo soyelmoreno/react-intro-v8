@@ -1,0 +1,12 @@
+{
+  "name": "react-intro-v8",
+  "version": "1.0.0",
+  "description": "Frontend Masters Complete Into to React, v8",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Carlos Moreno",
+  "license": "ISC",
+  "type": "module"
+}
