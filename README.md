@@ -1,4 +1,4 @@
-# Complete Intro to React v8
+# Complete Intro to React v8, plus Intermediate React v5
 
 Adopt Me is a pet finder app written in React. This app gets built as a part of
 the course on [Frontend Masters](https://frontendmasters.com/): [Complete Intro
@@ -12,6 +12,7 @@ here: https://github.com/btholt/citr-v8-project/
 The website and Github repo remain free and open source even when your Frontend
 Masters subscription expires.
 
-Intermediate React v5 builds on this repo. The branch "intermediate-react-v5"
-contains changes to the pet finder files that were made in the intermediate
-course.
+[Intermediate React
+v5](https://frontendmasters.com/courses/archive/intermediate-react-v5/) builds
+on this repo. The branch "intermediate-react-v5" contains changes to the pet
+finder files that were made in the intermediate course.
