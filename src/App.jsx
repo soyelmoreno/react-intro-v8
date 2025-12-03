@@ -5,6 +5,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SearchParams from "./SearchParams";
 import Details from "./Details";
 import AdoptedPetContext from "./AdoptedPetContext";
+import Intermediate from "./intermediate/Intermediate";
+import Home from "./intermediate/routes/Home";
+import UseRef from "./intermediate/routes/UseRef";
+import UseCallback from "./intermediate/routes/UseCallback";
+import UseMemo from "./intermediate/routes/UseMemo";
+import UseReducer from "./intermediate/routes/UseReducer";
+import UseLayoutEffect from "./intermediate/routes/UseLayoutEffect";
+import UseId from "./intermediate/routes/UseId";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,9 +32,23 @@ const App = () => {
         <AdoptedPetContext.Provider value={adoptedPet}>
           <QueryClientProvider client={queryClient}>
             <header>
-              <Link to="/">Adopt Me!</Link>
+              <Link className="logo" to="/">
+                Adopt Me!
+              </Link>
             </header>
+            <nav>
+              <Link to="/intermediate">Intermediate React v5</Link>
+            </nav>
             <Routes>
+              <Route path="/intermediate" element={<Intermediate />}>
+                <Route path="" element={<Home />} />
+                <Route path="useReducer" element={<UseReducer />} />
+                <Route path="useMemo" element={<UseMemo />} />
+                <Route path="useCallback" element={<UseCallback />} />
+                <Route path="useRef" element={<UseRef />} />
+                <Route path="useLayoutEffect" element={<UseLayoutEffect />} />
+                <Route path="useId" element={<UseId />} />
+              </Route>
               <Route path="/details/:id" element={<Details />} />
               <Route path="/" element={<SearchParams />} />
             </Routes>
