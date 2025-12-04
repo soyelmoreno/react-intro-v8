@@ -3,13 +3,13 @@ import Nav from "./Nav";
 
 import "./index.css";
 
-function Intermediate() {
+function Hooks() {
   return (
-    <div className="intermediate">
+    <div className="hooks">
       <Nav />
       <Outlet />
     </div>
   );
 }
 
-export default Intermediate;
+export default Hooks;

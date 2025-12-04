@@ -3,14 +3,14 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AdoptedPetContext from "./AdoptedPetContext";
-import Intermediate from "./intermediate/Intermediate";
-import Home from "./intermediate/routes/Home";
-import UseRef from "./intermediate/routes/UseRef";
-import UseCallback from "./intermediate/routes/UseCallback";
-import UseMemo from "./intermediate/routes/UseMemo";
-import UseReducer from "./intermediate/routes/UseReducer";
-import UseLayoutEffect from "./intermediate/routes/UseLayoutEffect";
-import UseId from "./intermediate/routes/UseId";
+import Hooks from "./hooks/Hooks";
+import Home from "./hooks/routes/Home";
+import UseRef from "./hooks/routes/UseRef";
+import UseCallback from "./hooks/routes/UseCallback";
+import UseMemo from "./hooks/routes/UseMemo";
+import UseReducer from "./hooks/routes/UseReducer";
+import UseLayoutEffect from "./hooks/routes/UseLayoutEffect";
+import UseId from "./hooks/routes/UseId";
 
 // Code-splitting. Only load these modules when the user actually navigates to
 // these routes. Use `lazy` to do the import; Vite notices this, and splits them
@@ -57,10 +57,12 @@ const App = () => {
                 </Link>
               </header>
               <nav>
-                <Link to="/intermediate">Intermediate React v5</Link>
+                <Link to="/hooks">
+                  Hooks Examples from Intermediate React v5
+                </Link>
               </nav>
               <Routes>
-                <Route path="/intermediate" element={<Intermediate />}>
+                <Route path="/hooks" element={<Hooks />}>
                   <Route path="" element={<Home />} />
                   <Route path="useReducer" element={<UseReducer />} />
                   <Route path="useMemo" element={<UseMemo />} />
