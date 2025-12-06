@@ -17,8 +17,9 @@ const Details = () => {
       "Why did you not give me an id? I wanted an id. I have no id."
     );
   }
-  const results = useQuery(["details", id], fetchPet);
+  const results = useQuery<PetAPIResponse>(["details", id], fetchPet);
   const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [, setAdoptedPet] = useContext(AdoptedPetContext);
 
   if (results.isLoading) {
@@ -29,7 +30,10 @@ const Details = () => {
     );
   }
 
-  const pet = results.data.pets[0];
+  const pet = results?.data?.pets[0];
+  if (!pet) {
+    throw new Error("No Pet. Lol.");
+  }
 
   return (
     <div className="details">
@@ -62,10 +66,10 @@ const Details = () => {
   );
 };
 
-export default function DetailsErrorBoundary(props) {
+export default function DetailsErrorBoundary() {
   return (
     <ErrorBoundary>
-      <Details {...props} />
+      <Details />
     </ErrorBoundary>
   );
 }
