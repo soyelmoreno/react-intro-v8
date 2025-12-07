@@ -10,6 +10,7 @@ import UseMemo from "./hooks/routes/UseMemo";
 import UseReducer from "./hooks/routes/UseReducer";
 import UseLayoutEffect from "./hooks/routes/UseLayoutEffect";
 import UseId from "./hooks/routes/UseId";
+import { Pet } from "./APIResponsesTypes";
 
 // Code-splitting. Only load these modules when the user actually navigates to
 // these routes. Use `lazy` to do the import; Vite notices this, and splits them
@@ -29,7 +30,7 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  const adoptedPet = useState(null);
+  const adoptedPet = useState(null as Pet | null);
 
   return (
     <div
